@@ -1,14 +1,14 @@
 import React from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import Confession from "./components/Confession";
-import Home from "./components/Home";
+import MainLayout from "./components/MainLayout";
 import Misdemeanour from "./components/Misdemeanour";
 import NotFound from "./components/NotFound";
 
 const Router: React.FC = () => {
   const mainRoutes = {
     path: "/",
-    element: <Home />,
+    element: <MainLayout />,
     children: [
       { path: "*", element: <Navigate to="404" /> },
       { path: "misdemenour", element: <Misdemeanour /> },
