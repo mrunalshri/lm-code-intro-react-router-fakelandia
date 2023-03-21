@@ -5,7 +5,6 @@ import Navigation from "./Navigation";
 const MainLayout: React.FC = () => {
   return (
     <>
-      <header>Fakelandia Justice Department</header>
       <Navigation />
       <Outlet />
     </>
