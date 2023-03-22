@@ -31,18 +31,12 @@ const Misdemeanours: React.FC = () => {
     getMisdemeanours();
   }, []);
 
-  useEffect(() => {
-    console.log("Select value chanfesd", selectedMisdemeanour);
-    const filteredData = misdemeanours.filter(
-      (misdemeanour) => misdemeanour.misdemeanour === selectedMisdemeanour
-    );
-    setFilteredMisdemeanours(filteredData);
-    console.log("filtered data===>", filteredData);
-  }, [selectedMisdemeanour]);
-
   const handleDropdown = (value: string) => {
-    console.log(value);
+    const filteredData = misdemeanours.filter(
+      (misdemeanour) => misdemeanour.misdemeanour === value
+    );
     setSelectedMisdemeanour(value);
+    setFilteredMisdemeanours(filteredData);
   };
   return (
     <>
