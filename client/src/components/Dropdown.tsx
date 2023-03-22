@@ -11,19 +11,20 @@ interface DropdownProps {
   name: string;
   value: string;
   selectText?: string;
+  addClass?: string;
   onChangeHandler: (value: string) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = (props) => {
   return (
-    <div>
+    <>
       <label>{props.labelText} </label>
       <span>
         <select
           name={props.name}
           aria-label="select-options"
           value={props.value}
-          className="select-Input"
+          className={`select-Input ${props.addClass ? props.addClass : ""}`}
           onChange={({ target }) => {
             props.onChangeHandler(target.value);
           }}
@@ -38,7 +39,7 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
           })}
         </select>
       </span>
-    </div>
+    </>
   );
 };
 
