@@ -17,7 +17,7 @@ const Navigation: React.FC = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-purple-600 block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-purple-600 mr-4"
+                  ? "text-purple-600 block mt-4 lg:inline-block lg:mt-0 hover:text-purple-600 mr-4"
                   : "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
               }
             >
@@ -27,7 +27,7 @@ const Navigation: React.FC = () => {
               to="/misdemenour"
               className={({ isActive }) =>
                 isActive
-                  ? "text-purple-600 block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-purple-600 mr-4"
+                  ? "text-purple-600 block mt-4 lg:inline-block lg:mt-0 hover:text-purple-600 mr-4"
                   : "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
               }
             >
@@ -37,7 +37,7 @@ const Navigation: React.FC = () => {
               to="/confession"
               className={({ isActive }) =>
                 isActive
-                  ? "text-purple-600 block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-purple-600 mr-4"
+                  ? "text-purple-600 block mt-4 lg:inline-block lg:mt-0 hover:text-purple-600 mr-4"
                   : "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
               }
             >
