@@ -13,6 +13,7 @@ interface DropdownProps {
   selectText?: string;
   addClass?: string;
   onChangeHandler: (value: string) => void;
+  onBlurHandler?: (value: string) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = (props) => {
@@ -27,6 +28,9 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
           className={`select-Input ${props.addClass ? props.addClass : ""}`}
           onChange={({ target }) => {
             props.onChangeHandler(target.value);
+          }}
+          onBlur={({ target }) => {
+            props.onBlurHandler && props.onBlurHandler(target.value);
           }}
         >
           {props.selectText && <option value={""}>{props.selectText}</option>}

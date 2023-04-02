@@ -1,14 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useMisdemeanourContext } from "../misdemeanour_context";
 import {
   Misdemeanour,
   MISDEMEANOURS,
   MISDEMEANOURS_EMOJIS,
 } from "../types/misdemeanours.types";
 import Dropdown from "./Dropdown";
-import {
-  FilteredMisdemeanourContext,
-  SelectedMisdemeanourContext,
-} from "./Misdemeanour";
 
 interface FilteredMisdemeanoursProps {
   misdemeanours: Misdemeanour[];
@@ -16,8 +13,8 @@ interface FilteredMisdemeanoursProps {
 }
 
 const FilteredMisdemeanours: React.FC<FilteredMisdemeanoursProps> = (props) => {
-  const filteredMisdemeanours = useContext(FilteredMisdemeanourContext);
-  const selectedMisdemeanour = useContext(SelectedMisdemeanourContext);
+  const { selectedMisdemeanour, filteredMisdemeanours } =
+    useMisdemeanourContext();
 
   const misdemeanoursData = selectedMisdemeanour
     ? filteredMisdemeanours
