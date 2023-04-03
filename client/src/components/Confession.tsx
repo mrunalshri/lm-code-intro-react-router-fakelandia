@@ -24,7 +24,7 @@ const Confession: React.FC = () => {
   const { misdemeanours, updateMisdemeanours } = useMisdemeanourContext();
   const navigate = useNavigate();
 
-  const submitFormData = async (e: React.FormEvent) => {
+  const submitFormData = async () => {
     const response = await postData(formData);
     if (response.success && !response.justTalked) {
       const currentDate = new Date().toLocaleString("en-US").split(",")[0];
@@ -57,7 +57,7 @@ const Confession: React.FC = () => {
       <div className="mt-10 sm:mt-0">
         <div className="md:grid md:gap-6">
           <div className="mt-5 md:col-span-2 md:mt-0">
-            <form action="/nkn/" method="POST">
+            <form name="confession">
               <div className="overflow-hidden shadow sm:rounded-md">
                 <div className="bg-white px-4 py-5 sm:p-6">
                   <ErrorMessage errorMessage={responseError} />
