@@ -8,7 +8,9 @@ const MainLayout: React.FC = () => {
     <>
       <Navigation />
       <MisdemeanourContextProvider>
-        <Outlet />
+        <div className="relative top-20">
+          <Outlet />
+        </div>
       </MisdemeanourContextProvider>
     </>
   );

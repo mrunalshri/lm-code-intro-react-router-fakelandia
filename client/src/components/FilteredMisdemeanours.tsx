@@ -22,7 +22,7 @@ const FilteredMisdemeanours: React.FC<FilteredMisdemeanoursProps> = (props) => {
 
   return (
     <>
-      <header className="flex flex-row justify-around flex-wrap">
+      <header className="flex flex-row justify-around flex-wrap p-4 bg-cyan-500">
         <div className="basis-1/4">Citizen ID</div>
         <div className="basis-1/4">Date</div>
         <div className="basis-1/4">
@@ -35,11 +35,12 @@ const FilteredMisdemeanours: React.FC<FilteredMisdemeanoursProps> = (props) => {
             }))}
             name="misdemeanour"
             onChangeHandler={props.onChangeHandler}
+            addClass="bg-cyan-500"
           />
         </div>
         <div className="basis-1/4">Punishment Idea</div>
       </header>
-      <div className="flex flex-row justify-around flex-wrap">
+      <div className="flex flex-row justify-around flex-wrap gap-y-2.5 mb-2.5">
         {misdemeanoursData.map((misdemeanour: Misdemeanour, index) => {
           return (
             <React.Fragment key={`misdemeanour-${index}`}>
@@ -49,7 +50,7 @@ const FilteredMisdemeanours: React.FC<FilteredMisdemeanoursProps> = (props) => {
                 {misdemeanour.misdemeanour}{" "}
                 {MISDEMEANOURS_EMOJIS[misdemeanour.misdemeanour]}
               </div>
-              <div className="basis-1/4 text-center">
+              <div className="basis-1/4 flex justify-center">
                 <img src="https://picsum.photos/200/75" alt="random picsum" />
               </div>
             </React.Fragment>
