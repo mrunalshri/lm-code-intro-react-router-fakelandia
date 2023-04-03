@@ -13,12 +13,14 @@ export const MisdemeanourContext = React.createContext<{
   onChangeHandler: (value: string) => void;
   selectedMisdemeanour: string;
   filteredMisdemeanours: Misdemeanour[];
+  loader: boolean;
 }>({
   misdemeanours: [],
   updateMisdemeanours: () => null,
   onChangeHandler: () => null,
   selectedMisdemeanour: "",
   filteredMisdemeanours: [],
+  loader: false,
 });
 
 export const useMisdemeanourContext = () => {
@@ -35,13 +37,16 @@ export const MisdemeanourContextProvider = ({
   const [filteredMisdemeanours, setFilteredMisdemeanours] = useState<
     Array<Misdemeanour>
   >([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const getMisdemeanours = async () => {
+      setIsLoading(true);
       const misdemeanoursAPI = await fetch(
-        "http://localhost:8080/api/misdemeanours/5"
+        "http://localhost:8080/api/misdemeanours/7"
       );
       const statusCode = misdemeanoursAPI.status;
+      setIsLoading(false);
       if (statusCode === 200) {
         const response = await misdemeanoursAPI.json();
         setMisdemeanours(response.misdemeanours);
@@ -68,6 +73,7 @@ export const MisdemeanourContextProvider = ({
         selectedMisdemeanour: selectedMisdemeanour,
         filteredMisdemeanours: filteredMisdemeanours,
         onChangeHandler: handleMisdemeanourChange,
+        loader: isLoading,
       }}
     >
       {children}
