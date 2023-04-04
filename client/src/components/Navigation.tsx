@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 const Navigation: React.FC = () => {
   return (
     <>
-      <header className="border-b backdrop-blur bg-gray-50 dark:bg-gray-900/70 dark:border-gray-700 xl:fixed xl:w-full xl:top-0 xl:left-0 xl:z-30">
-        <div className="container px-5 py-6 mx-auto space-y-4 xl:space-y-0 xl:flex xl:items-center xl:justify-between xl:space-x-10">
-          <div className="flex items-center max-w-xs flex-shrink-0 text-black-700 mr-6">
-            <span className="font-semibold text-xl tracking-tight ">
-              Fakelandia Justice Department
-            </span>
+      <header className="border-b backdrop-blur pl-48 bg-gray-50 dark:bg-gray-900/70 dark:border-gray-700 xl:fixed xl:w-full xl:top-0 xl:left-0 xl:z-30">
+        <div className="container px-1 py-2 mx-auto space-y-4 xl:space-y-0 xl:flex xl:items-center xl:justify-between xl:space-x-10">
+          <div className="flex flex-col items-center max-w-xs flex-shrink-0 text-black-700 mr-6">
+            <div className="font-semibold text-xl">Fakelandia Justice</div>
+            <div className="font-semibold text-xl">Department</div>
           </div>
 
           <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">

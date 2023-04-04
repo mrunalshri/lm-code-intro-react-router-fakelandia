@@ -2,8 +2,8 @@ import { ConfessionFormData } from "./types/types";
 
 export const validateSubject = (value: string | null): boolean => {
   if (!value) return false;
-  const regex = /^[a-zA-Z]{3,23}$/;
-  return regex.test(value);
+  const length = value.length;
+  return length >= 3 && length <= 50;
 };
 
 export const validateReason = (value: string | null): boolean => {

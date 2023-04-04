@@ -8,8 +8,10 @@ const MainLayout: React.FC = () => {
     <>
       <Navigation />
       <MisdemeanourContextProvider>
-        <div className="relative top-20">
-          <Outlet />
+        <div className="min-h-screen bg-slate-100">
+          <div className="relative pt-20">
+            <Outlet />
+          </div>
         </div>
       </MisdemeanourContextProvider>
     </>

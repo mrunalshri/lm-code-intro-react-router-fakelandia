@@ -4,7 +4,9 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
-    extend: {},
-  },
-  plugins: [],
+    fontFamily: {
+      'sans': ["Arial Rounded MT Bold", "Helvetica Rounded", "Arial", "sans-serif"],
+    },
+    plugins: [],
+  }
 }
